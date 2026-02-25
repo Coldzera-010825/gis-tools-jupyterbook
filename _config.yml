@@ -1,0 +1,26 @@
+# Book settings
+title: 地理空间数据处理工具集
+author: lishuhao
+logo: ""
+copyright: "2026"
+
+# Execution settings
+execute:
+  execute_notebooks: off  # Don't execute notebooks during build
+
+# HTML settings
+html:
+  use_issues_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+  baseurl: https://coldzera-010825.github.io/gis-tools-jupyterbook/
+
+# Repository settings
+repository:
+  url: https://github.com/Coldzera-010825/gis-tools-jupyterbook
+  branch: master
+
+# Launch button settings
+launch_buttons:
+  notebook_interface: classic

@@ -22,35 +22,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.11'
 
-      - name: Install MyST
+      - name: Install dependencies
         run: |
-          npm install -g mystmd
+          pip install jupyter-book==0.15.1 ghp-import
 
-      - name: Build MyST site
+      - name: Build the book
         run: |
-          myst build --site
-
-      - name: Export static HTML
-        run: |
-          myst build --html
-
-      - name: Check build output
-        run: |
-          echo "Checking _build directory structure:"
-          ls -la _build/
-          if [ -d "_build/html" ]; then
-            echo "HTML directory exists"
-            ls -la _build/html/
-          fi
-          if [ -d "_build/site" ]; then
-            echo "Site directory exists"
-            ls -la _build/site/
-          fi
+          jupyter-book build . --builder html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
