@@ -25,20 +25,37 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Install Jupyter Book
+      - name: Install MyST
         run: |
           npm install -g mystmd
 
-      - name: Build the book
+      - name: Build MyST site
+        run: |
+          myst build --site
+
+      - name: Export static HTML
         run: |
           myst build --html
+
+      - name: Check build output
+        run: |
+          echo "Checking _build directory structure:"
+          ls -la _build/
+          if [ -d "_build/html" ]; then
+            echo "HTML directory exists"
+            ls -la _build/html/
+          fi
+          if [ -d "_build/site" ]; then
+            echo "Site directory exists"
+            ls -la _build/site/
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './_build/site'
+          path: './_build/html'
 
   deploy:
     environment:
