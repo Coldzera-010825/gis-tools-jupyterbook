@@ -1,0 +1,49 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 6f14729b-ccc6-411b-a827-2fd896ce1fca
+  title: 地理空间数据处理工具集
+  description: 基于Python的GIS数据处理与分析教程
+  keywords:
+    - GIS
+    - Python
+    - Shapefile
+    - 坐标转换
+    - 数据处理
+  authors:
+    - name: lishuhao
+  toc:
+    - file: index.md
+      title: 主页
+    - title: 坐标系转换
+      children:
+        - file: trans_CRS.ipynb
+          title: 坐标系转换
+        - file: shp-bounds-crs.ipynb
+          title: Shapefile范围查看与坐标系转换
+    - title: 格式转换
+      children:
+        - file: batch_shp2tif.ipynb
+          title: 批量Shapefile转GeoTIFF
+        - file: shp2tif_workflow.ipynb
+          title: Shapefile转GeoTIFF工作流
+        - file: kml_ouput.ipynb
+          title: KML输出
+    - title: 数据处理
+      children:
+        - file: rename-fields.ipynb
+          title: 更改字段名称
+        - file: add-random-column.ipynb
+          title: 新增随机列表
+        - file: shp-json-field-convert.ipynb
+          title: 转换Shapefile对应JSON字段属性
+    - title: 数据分析
+      children:
+        - file: pipe-height-stats.ipynb
+          title: 管井高度变化值统计
+        - file: find-mapping.ipynb
+          title: 寻找映射关系
+site:
+  template: book-theme
+  options:
+    logo_text: GIS工具集
