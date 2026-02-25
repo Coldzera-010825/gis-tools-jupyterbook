@@ -1,23 +1,34 @@
 format: jb-book
 root: index
-chapters:
-  - file: trans_CRS
-    title: 坐标系转换
-  - file: shp-bounds-crs
-    title: Shapefile范围查看与坐标系转换
-  - file: batch_shp2tif
-    title: 批量Shapefile转GeoTIFF
-  - file: shp2tif_workflow
-    title: Shapefile转GeoTIFF工作流
-  - file: kml_ouput
-    title: KML输出
-  - file: rename-fields
-    title: 更改字段名称
-  - file: add-random-column
-    title: 新增随机列表
-  - file: shp-json-field-convert
-    title: 转换Shapefile对应JSON字段属性
-  - file: pipe-height-stats
-    title: 管井高度变化值统计
-  - file: find-mapping
-    title: 寻找映射关系
+parts:
+  - caption: 坐标系转换
+    chapters:
+      - file: trans_CRS
+        title: 坐标系转换
+      - file: shp-bounds-crs
+        title: Shapefile范围查看与坐标系转换
+
+  - caption: 格式转换
+    chapters:
+      - file: batch_shp2tif
+        title: 批量Shapefile转GeoTIFF
+      - file: shp2tif_workflow
+        title: Shapefile转GeoTIFF工作流
+      - file: kml_ouput
+        title: KML输出
+
+  - caption: 数据处理
+    chapters:
+      - file: rename-fields
+        title: 更改字段名称
+      - file: add-random-column
+        title: 新增随机列表
+      - file: shp-json-field-convert
+        title: 转换Shapefile对应JSON字段属性
+
+  - caption: 数据分析
+    chapters:
+      - file: pipe-height-stats
+        title: 管井高度变化值统计
+      - file: find-mapping
+        title: 寻找映射关系
